@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "commit-it"
+version = "0.1.0"
+description = "Generate git commit messages using local LLMs via Ollama"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.27.0",
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+commit-it = "commit_it.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["commit_it"]
